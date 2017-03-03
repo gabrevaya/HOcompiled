@@ -31,3 +31,5 @@ add_numbers:
 ```
 
 y llamada dentro de `.LFB0` mediante `call	add_numbers`.
+
+4. El símbolo *U* indica una referencia en el código no definida. Mientras que el símbolo T indica funciones definidas locales (T mayúscula).
