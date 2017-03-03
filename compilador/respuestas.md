@@ -32,6 +32,6 @@ add_numbers:
 
 y llamada dentro de `.LFB0` mediante `call	add_numbers`.
 
-4. El símbolo *U* indica una referencia en el código no definida. Mientras que el símbolo *T* indica funciones definidas locales (T mayúscula).
+4. El símbolo *U* indica una referencia en el código no definida. Mientras que el símbolo *T* indica funciones externas (T mayúscula).
 
 5. Aparece una cantidad mayor de símbolos en el ejecutable que en el objeto ya que en el primero también se incluyen los linkeos de las librerias. Sin embargo los símbolos que estaban en el objeto no cambian ya que en este caso las librerías son estáticas (*printf* sigue estando indefinido pero ahora especifica donde lo tiene que ir a buscar: *printf@@GLIBC_2.2.5*)
