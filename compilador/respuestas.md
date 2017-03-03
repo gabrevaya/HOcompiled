@@ -7,3 +7,27 @@
 	* `make executable` haga el linkeo entre el objeto binario y un ejecutable, teniendo en cuenta las restricciones específicas del sistema (por ej., restricciones de espacios de memoria utilizables).
 
 2. El preprocesador agregó el header del código y lo que incluye la librería *stdio.h*, incluida en el header.
+
+3. La función es definida en
+
+```
+add_numbers:
+.LFB1:
+	.cfi_startproc
+	push	rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	mov	rbp, rsp
+	.cfi_def_cfa_register 6
+	mov	DWORD PTR [rbp-4], edi
+	mov	DWORD PTR [rbp-8], esi
+	mov	edx, DWORD PTR [rbp-4]
+	mov	eax, DWORD PTR [rbp-8]
+	add	eax, edx
+	pop	rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+```
+
+y llamada dentro de `.LFB0` mediante `call	add_numbers`.
